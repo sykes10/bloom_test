@@ -1,0 +1,7 @@
+<div class="form-group" *ngIf="data">
+    <label [for]="data.label">{{data.label}}</label>{{data.label}}
+    <input [type]="data.type" [formControlName]="data.label" class="form-control" [ngClass]="{'is-invalid': (data.validator.dirty || data.validator.touched) && data.validator.errors}">
+    <div class="invalid-feedback" *ngIf="data.validator.errors">
+      <div *ngIf="data.validators.required">Name is Required</div>
+    </div>
+  </div>
